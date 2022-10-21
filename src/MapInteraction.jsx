@@ -366,6 +366,7 @@ export class MapInteractionControlled extends Component {
 
   renderControls() {
     const step = this.discreteScaleStepSize();
+    console.log('react-map-interaction MapInteraction renderControls', this.props.onClickGIS)
     return (
       <Controls
         onClickPlus={() => this.changeScale(step)}
@@ -389,6 +390,8 @@ export class MapInteractionControlled extends Component {
 
   render() {
     const { showControls, children } = this.props;
+    console.log('react-map-interaction MapInteraction', showControls, this.props)
+
     const scale = this.props.value.scale;
     // Defensively clamp the translation. This should not be necessary if we properly set state elsewhere.
     const translation = this.clampTranslation(this.props.value.translation);

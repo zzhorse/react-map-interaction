@@ -6,6 +6,7 @@ import MapInteraction from './MapInteraction';
   the user zoom and pan the children by scaling and translating props.children using css.
 */
 const MapInteractionCSS = (props) => {
+  console.log('react-map-interaction MapInteractionCSS', props)
   return (
     <MapInteraction {...props}>
       {
