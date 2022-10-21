@@ -126,6 +126,7 @@ MapInteraction doesn't require any props. It will control its own internal state
   // Content to render in each of the control buttons (only when 'showControls' is 'true')
   plusBtnContents: PropTypes.node,
   minusBtnContents: PropTypes.node,
+  gisBtnContents: PropTypes.node,
 
   // Class applied to the controls wrapper (only when 'showControls' is 'true')
   controlsClass: PropTypes.string,
@@ -136,6 +137,10 @@ MapInteraction doesn't require any props. It will control its own internal state
   // Classes applied to each button separately (only when 'showControls' is 'true')
   plusBtnClass: PropTypes.string,
   minusBtnClass: PropTypes.string,
+  gisBtnClass: PropTypes.string,
+      
+  // If this function is supported, the GIS button will be shown
+  onClickGIS: PropTypes.func,
 };
 ```
 
