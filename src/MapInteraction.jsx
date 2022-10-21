@@ -42,10 +42,13 @@ export class MapInteractionControlled extends Component {
       showControls: PropTypes.bool,
       plusBtnContents: PropTypes.node,
       minusBtnContents: PropTypes.node,
+      gisBtnContents: PropTypes.node,
       btnClass: PropTypes.string,
       plusBtnClass: PropTypes.string,
       minusBtnClass: PropTypes.string,
-      controlsClass: PropTypes.string
+      gisBtnClass: PropTypes.string,
+      controlsClass: PropTypes.string,
+      onClickGIS: PropTypes.func,
     };
   }
 

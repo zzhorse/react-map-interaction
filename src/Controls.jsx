@@ -38,6 +38,7 @@ class Controls extends Component {
       onClickMinus();
     }
 
+    console.log('react-map-interaction Controls', gisBtnContents, onClickGIS)
     return (
       <div style={controlsStyle} className={controlsClass}>
         <div>
