@@ -6,15 +6,18 @@ class Controls extends Component {
     const {
       plusBtnContents,
       minusBtnContents,
+      gisBtnContents,
       btnClass,
       plusBtnClass,
       minusBtnClass,
+      gisBtnClass,
       controlsClass,
       scale,
       minScale,
       maxScale,
       onClickPlus,
       onClickMinus,
+      onClickGIS,
       disableZoom
     } = this.props;
 
@@ -69,6 +72,23 @@ class Controls extends Component {
             {minusBtnContents}
           </button>
         </div>
+        {onClickGIS && (
+          <div>
+            <button
+                ref={(node) => { this.gisNode = node; }}
+                onClick={onClickGIS}
+                onTouchEnd={onClickGIS}
+                className={[
+                  btnClass ? btnClass : '',
+                  gisBtnClass ? gisBtnClass : '',
+                ].join(' ')}
+                type="button"
+                style={(btnClass || gisBtnClass) ? undefined : btnStyle}
+            >
+              {gisBtnContents}
+            </button>
+          </div>
+        )}
       </div>
     );
   }
@@ -77,11 +97,14 @@ class Controls extends Component {
 Controls.propTypes = {
   onClickPlus: PropTypes.func.isRequired,
   onClickMinus: PropTypes.func.isRequired,
+  onClickGIS: PropTypes.func,
   plusBtnContents: PropTypes.node,
   minusBtnContents: PropTypes.node,
+  gisBtnContents: PropTypes.node,
   btnClass: PropTypes.string,
   plusBtnClass: PropTypes.string,
   minusBtnClass: PropTypes.string,
+  gisBtnClass: PropTypes.string,
   controlsClass: PropTypes.string,
   scale: PropTypes.number,
   minScale: PropTypes.number,
@@ -92,6 +115,7 @@ Controls.propTypes = {
 Controls.defaultProps = {
   plusBtnContents: '+',
   minusBtnContents: '-',
+  gisBtnContents: 'G',
   disableZoom: false
 };
 
