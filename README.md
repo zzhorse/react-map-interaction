@@ -141,6 +141,8 @@ MapInteraction doesn't require any props. It will control its own internal state
       
   // If this function is supported, the GIS button will be shown
   onClickGIS: PropTypes.func,
+  // If this function is supported, the toggle spot name button will be shown
+  onClickToggleSpot: PropTypes.func,
 };
 ```
 

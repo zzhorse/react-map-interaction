@@ -7,10 +7,12 @@ class Controls extends Component {
       plusBtnContents,
       minusBtnContents,
       gisBtnContents,
+      toggleSpotBtnContents,
       btnClass,
       plusBtnClass,
       minusBtnClass,
       gisBtnClass,
+      toggleSpotBtnClass,
       controlsClass,
       scale,
       minScale,
@@ -18,6 +20,7 @@ class Controls extends Component {
       onClickPlus,
       onClickMinus,
       onClickGIS,
+      onClickToggleSpot,
       disableZoom
     } = this.props;
 
@@ -90,6 +93,23 @@ class Controls extends Component {
             </button>
           </div>
         )}
+        {onClickToggleSpot && (
+            <div>
+              <button
+                  ref={(node) => { this.gisNode = node; }}
+                  onClick={onClickToggleSpot}
+                  onTouchEnd={onClickToggleSpot}
+                  className={[
+                    btnClass ? btnClass : '',
+                    toggleSpotBtnClass ? toggleSpotBtnClass : '',
+                  ].join(' ')}
+                  type="button"
+                  style={(btnClass || toggleSpotBtnClass) ? undefined : btnStyle}
+              >
+                {toggleSpotBtnContents}
+              </button>
+            </div>
+        )}
       </div>
     );
   }
@@ -99,13 +119,16 @@ Controls.propTypes = {
   onClickPlus: PropTypes.func.isRequired,
   onClickMinus: PropTypes.func.isRequired,
   onClickGIS: PropTypes.func,
+  onClickToggleSpot: PropTypes.func,
   plusBtnContents: PropTypes.node,
   minusBtnContents: PropTypes.node,
   gisBtnContents: PropTypes.node,
+  toggleSpotBtnContents: PropTypes.node,
   btnClass: PropTypes.string,
   plusBtnClass: PropTypes.string,
   minusBtnClass: PropTypes.string,
   gisBtnClass: PropTypes.string,
+  toggleSpotBtnClass: PropTypes.string,
   controlsClass: PropTypes.string,
   scale: PropTypes.number,
   minScale: PropTypes.number,
@@ -117,6 +140,7 @@ Controls.defaultProps = {
   plusBtnContents: '+',
   minusBtnContents: '-',
   gisBtnContents: 'G',
+  toggleSpotBtnContents: '*',
   disableZoom: false
 };
 

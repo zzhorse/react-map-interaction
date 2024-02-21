@@ -43,12 +43,15 @@ export class MapInteractionControlled extends Component {
       plusBtnContents: PropTypes.node,
       minusBtnContents: PropTypes.node,
       gisBtnContents: PropTypes.node,
+      toggleSpotBtnContents: PropTypes.node,
       btnClass: PropTypes.string,
       plusBtnClass: PropTypes.string,
       minusBtnClass: PropTypes.string,
       gisBtnClass: PropTypes.string,
+      toggleSpotBtnClass: PropTypes.string,
       controlsClass: PropTypes.string,
       onClickGIS: PropTypes.func,
+      onClickToggleSpot: PropTypes.func,
     };
   }
 
@@ -374,12 +377,15 @@ export class MapInteractionControlled extends Component {
         plusBtnContents={this.props.plusBtnContents}
         minusBtnContents={this.props.minusBtnContents}
         gisBtnContents={this.props.gisBtnContents}
+        toggleSpotBtnContents={this.props.toggleSpotBtnContents}
         btnClass={this.props.btnClass}
         plusBtnClass={this.props.plusBtnClass}
         minusBtnClass={this.props.minusBtnClass}
         gisBtnClass={this.props.gisBtnClass}
+        toggleSpotBtnClass={this.props.toggleSpotBtnClass}
         controlsClass={this.props.controlsClass}
         onClickGIS={this.props.onClickGIS}
+        onClickToggleSpot={this.props.onClickToggleSpot}
         scale={this.props.value.scale}
         minScale={this.props.minScale}
         maxScale={this.props.maxScale}
@@ -462,12 +468,15 @@ class MapInteractionController extends Component {
       plusBtnContents: PropTypes.node,
       minusBtnContents: PropTypes.node,
       gisBtnContents: PropTypes.node,
+      toggleSpotBtnContents: PropTypes.node,
       btnClass: PropTypes.string,
       plusBtnClass: PropTypes.string,
       minusBtnClass: PropTypes.string,
       gisBtnClass: PropTypes.string,
+      toggleSpotBtnClass: PropTypes.string,
       controlsClass: PropTypes.string,
       onClickGIS: PropTypes.func,
+      onClickToggleSpot: PropTypes.func,
     };
   }
 
